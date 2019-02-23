@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+    mongo:
+        image: mongo:3.6.6
+        restart: always
+        mem_limit: 1G
+        container_name: itfy_mongo
+        ports:
+            - "27017:27017"
+        volumes:
+            - ./docker/mongo/data:/data/db
+            - ./docker/mongo/config:/data/configdb
+            - ./docker/mongo/dumps:/dumps
